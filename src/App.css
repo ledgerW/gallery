@@ -1,38 +1,71 @@
-.App {
-  text-align: center;
+.full-screen {
+  position: relative;
+  overflow: hidden;
+  padding-top: 56.25%;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.full-screen video {
+  border: 0;
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.nav {
+  position: fixed;
+  right: 25px;
+  bottom: 25px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.br {
+  right: 25px;
+  bottom: 25px;
 }
 
-.App-link {
-  color: #61dafb;
+.tr {
+  right: 25px;
+  top: 25px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.bl {
+  left: 25px;
+  bottom: 25px;
+}
+
+.tl {
+  left: 25px;
+  top: 25px;
+}
+
+.nav button {
+  display: block;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: rgba(8, 236, 149, 0.322);
+  background-image: url('./icons/snowman-solid.svg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 32px;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+  font-size: 0;
+  outline: 0;
+}
+
+.iframe-container {
+  overflow: hidden;
+  /* 16:9 aspect ratio */
+  padding-top: 56.25%;
+  position: relative;
+}
+
+.iframe-container iframe {
+   border: 0;
+   height: 100%;
+   left: 0;
+   position: absolute;
+   top: 0;
+   width: 100%;
 }
