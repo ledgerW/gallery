@@ -5,11 +5,9 @@ import NavButton from '../components/navButton'
 
 
 function Home(props) {
-  const homeVidSource = "vid.mp4"
-
   return (
     <div>
-      <FullScreenVid src={homeVidSource}/>
+      <FullScreenVid src={props.url}/>
 
       <NavButton class="nav br" to="robot-youtube"/>
     </div>
