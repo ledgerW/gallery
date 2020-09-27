@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React from 'react'
 import '../App.css'
 import YouTube from 'react-youtube';
 
@@ -10,18 +10,18 @@ function FullScreenYouTube(props) {
       autoplay: 1,
       controls: 0,
       disablekb: 1,
-      loop: 1
+      loop: 1,
+      playlist: props.videoId
     },
   };
 
   return (
-    <div className="iframe-container">
-      <YouTube
-        videoId={props.videoId}
-        opts={opts}
-        onReady={(event) => event.target.mute()}
-        allowfullscreen/>
-    </div>
+    <YouTube
+      videoId={props.videoId}
+      opts={opts}
+      onReady={(event) => event.target.mute()}
+      allowfullscreen/>
+    
   )
 }
 
