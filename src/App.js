@@ -5,8 +5,8 @@ import YoutubeRobot from './views/youtubeRobot'
 import { Route, withRouter } from 'react-router-dom'
 
 import Amplify, { Storage } from 'aws-amplify';
-import awsconfig from './aws-exports';
-Amplify.configure(awsconfig);
+import awsmobile from './aws-exports';
+Amplify.configure(awsmobile);
 
 
 function App() {
