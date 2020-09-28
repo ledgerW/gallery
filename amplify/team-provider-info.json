@@ -16,5 +16,23 @@
         "gallerya448b80a": {}
       }
     }
+  },
+  "prod": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-gallery-prod-212037-authRole",
+      "UnauthRoleArn": "arn:aws:iam::553371509391:role/amplify-gallery-prod-212037-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::553371509391:role/amplify-gallery-prod-212037-authRole",
+      "Region": "us-east-1",
+      "DeploymentBucketName": "amplify-gallery-prod-212037-deployment",
+      "UnauthRoleName": "amplify-gallery-prod-212037-unauthRole",
+      "StackName": "amplify-gallery-prod-212037",
+      "StackId": "arn:aws:cloudformation:us-east-1:553371509391:stack/amplify-gallery-prod-212037/d04207c0-0128-11eb-863d-0afe492705d7",
+      "AmplifyAppId": "d3i0eb8az8t01e"
+    },
+    "categories": {
+      "auth": {
+        "gallerya448b80a": {}
+      }
+    }
   }
 }
