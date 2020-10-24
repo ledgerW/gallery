@@ -1,21 +1,22 @@
 import React, { useState, useEffect } from 'react';
 import '../App.css'
-import { Storage } from 'aws-amplify';
-import FullScreenYoutube from '../components/fullScreenYoutube'
+import { Storage } from 'aws-amplify'
+import VidFromYoutube from '../components/vidFromYoutube'
 import FullScreenText from '../components/fullScreenText'
 import BackgroundAudio from '../components/backgroundAudio'
 import NavButton from '../components/navButton'
-import Youtube from '../apis/youtube';
+import Youtube from '../apis/youtube'
+import FullScreenVid from '../components/fullScreenVid'
 
 
-function YoutubeRobot(props) {
+function AloneOnEarth(props) {
   const [videoId, setVideoId] = useState()
   const [audioUrl, setAudioUrl] = useState()
 
   const phrase = "underwater";
 
   const overlayText = `
-  I swim underneath where the brightness comes  from,
+  I swim underneath where the brightness comes from,
   now I am in half, now I wear the world like a wound on my mouth. for so long I wanted to hold things like the sky, to have brightness and flying in my breath
   but that is not me, I was stolen
   or I am close to dying or
@@ -33,6 +34,10 @@ function YoutubeRobot(props) {
   is a dark river and no one else will
   ever be here.
   `;
+
+  const poem = [
+    {'content': 'I swim underneath where the brightness comes from,', 'interval': 2}
+  ];
   
   useEffect(() => {
     navigator.geolocation.getCurrentPosition((position) => {
@@ -70,16 +75,16 @@ function YoutubeRobot(props) {
   return (
     <div>
       {(videoId && audioUrl) && (
-        <div className="full-screen">
-            <FullScreenYoutube videoId={videoId}/>
-            <BackgroundAudio src={audioUrl}/>
-            <FullScreenText content={overlayText}/>
+        <FullScreenVid>
+          <VidFromYoutube videoId={videoId}/>
+          {/*<BackgroundAudio src={audioUrl}/>*/}
+          <FullScreenText content={poem[0].content} speechToText={true}/>
 
-            <NavButton class="nav tl" to="/"/>
-        </div>
+          <NavButton class="nav tl" to="/"/>
+        </FullScreenVid>
       )}
     </div>
   )
 }
 
-export default YoutubeRobot;
+export default AloneOnEarth;

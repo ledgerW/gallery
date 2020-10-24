@@ -5,7 +5,7 @@ import '../App.css'
 function FullScreenVid(props) {
   return (
     <div className="full-screen">
-      <video autoPlay muted loop src={props.src}></video>
+      {props.children}
     </div>
   )
 }

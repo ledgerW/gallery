@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './App.css';
 import Home from './views/home'
-import YoutubeRobot from './views/youtubeRobot'
+import AloneOnEarth from './views/aloneOnEarth'
 import { Route, withRouter } from 'react-router-dom'
 
 import Amplify, { Storage } from 'aws-amplify';
@@ -28,8 +28,8 @@ function App() {
       <Route exact path='/' render={() => (
         <Home url={homeVidUrl}/>
       )}/>
-      <Route exact path='/robot-youtube' render={() => (
-        <YoutubeRobot/>
+      <Route exact path='/alone-on-earth' render={() => (
+        <AloneOnEarth/>
       )}/>
     </div>
   );
