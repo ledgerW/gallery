@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import '../App.css'
 import { Storage } from 'aws-amplify'
 import VidFromYoutube from '../components/vidFromYoutube'
-import FullScreenText from '../components/fullScreenText'
+import Poem from '../components/poem'
 import BackgroundAudio from '../components/backgroundAudio'
 import NavButton from '../components/navButton'
 import Youtube from '../apis/youtube'
@@ -13,7 +13,7 @@ function AloneOnEarth(props) {
   const [videoId, setVideoId] = useState()
   const [audioUrl, setAudioUrl] = useState()
 
-  const phrase = "underwater";
+  const phrase = "alone on earth";
 
   const overlayText = `
   I swim underneath where the brightness comes from,
@@ -36,8 +36,10 @@ function AloneOnEarth(props) {
   `;
 
   const poem = [
-    {'content': 'I swim underneath where the brightness comes from,', 'interval': 2}
-  ];
+    {'line': 0, 'text': 'I swim underneath where the brightness comes from', 'interval': 4000},
+    {'line': 1, 'text': 'now I am in half, now I wear the world like a wound on my mouth', 'interval': 4000},
+    {'line': 2, 'text': 'for so long I wanted to hold things like the sky', 'interval': 4000, 'last': true}
+  ]
   
   useEffect(() => {
     navigator.geolocation.getCurrentPosition((position) => {
@@ -47,7 +49,7 @@ function AloneOnEarth(props) {
         params: {
           part: 'snippet',
           maxResults: 10,
-          locationRadius: '10mi',
+          locationRadius: '20mi',
           type: 'video',
           q: phrase,
           location: location,
@@ -78,8 +80,7 @@ function AloneOnEarth(props) {
         <FullScreenVid>
           <VidFromYoutube videoId={videoId}/>
           {/*<BackgroundAudio src={audioUrl}/>*/}
-          <FullScreenText content={poem[0].content} speechToText={true}/>
-
+          <Poem content={poem} speechToText={true}/>
           <NavButton class="nav tl" to="/"/>
         </FullScreenVid>
       )}

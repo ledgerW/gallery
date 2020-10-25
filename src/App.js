@@ -1,12 +1,14 @@
-import React, { useState, useEffect } from 'react';
-import './App.css';
+import React, { useState, useEffect } from 'react'
+import './App.css'
 import Home from './views/home'
 import AloneOnEarth from './views/aloneOnEarth'
 import { Route, withRouter } from 'react-router-dom'
 
-import Amplify, { Storage } from 'aws-amplify';
-import awsmobile from './aws-exports';
-Amplify.configure(awsmobile);
+import Amplify, { Storage } from 'aws-amplify'
+import { AmazonAIPredictionsProvider } from '@aws-amplify/predictions'
+import awsmobile from './aws-exports'
+Amplify.configure(awsmobile)
+Amplify.addPluggable(new AmazonAIPredictionsProvider())
 
 
 function App() {
