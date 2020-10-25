@@ -35,9 +35,7 @@ function FullScreenText(props) {
   })
   
   return (
-    <div className='full-screen'>
-      <p>{text}</p>
-    </div>
+    <p>{text}</p>
   )
 }
 

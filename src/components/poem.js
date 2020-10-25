@@ -7,7 +7,6 @@ import FullScreenText from '../components/fullScreenText'
 function Poem (props) {
   const { content, speechToText} = props
   const [currentLine, setCurrentLine] = useState(0)
-  console.log(currentLine);
 
   
   return (
