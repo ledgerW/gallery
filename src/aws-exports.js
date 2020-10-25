@@ -9,7 +9,19 @@ const awsmobile = {
     "aws_user_pools_web_client_id": "7dphkaonmrmoheh3en43bil7s7",
     "oauth": {},
     "aws_user_files_s3_bucket": "gallery-content11249-dev",
-    "aws_user_files_s3_bucket_region": "us-east-1"
+    "aws_user_files_s3_bucket_region": "us-east-1",
+    "predictions": {
+        "convert": {
+            "speechGenerator": {
+                "region": "us-east-1",
+                "proxy": false,
+                "defaults": {
+                    "VoiceId": "Kendra",
+                    "LanguageCode": "en-US"
+                }
+            }
+        }
+    }
 };
 
 

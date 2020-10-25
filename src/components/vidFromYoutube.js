@@ -3,7 +3,7 @@ import '../App.css'
 import YouTube from 'react-youtube';
 
 
-function FullScreenYouTube(props) {
+function VidFromYouTube(props) {
   const opts = {
     playerVars: {
       // https://developers.google.com/youtube/player_parameters
@@ -25,4 +25,4 @@ function FullScreenYouTube(props) {
   )
 }
 
-export default FullScreenYouTube;
+export default VidFromYouTube;

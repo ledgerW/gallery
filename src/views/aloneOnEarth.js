@@ -1,21 +1,22 @@
 import React, { useState, useEffect } from 'react';
 import '../App.css'
-import { Storage } from 'aws-amplify';
-import FullScreenYoutube from '../components/fullScreenYoutube'
-import FullScreenText from '../components/fullScreenText'
+import { Storage } from 'aws-amplify'
+import VidFromYoutube from '../components/vidFromYoutube'
+import Poem from '../components/poem'
 import BackgroundAudio from '../components/backgroundAudio'
 import NavButton from '../components/navButton'
-import Youtube from '../apis/youtube';
+import Youtube from '../apis/youtube'
+import FullScreenVid from '../components/fullScreenVid'
 
 
-function YoutubeRobot(props) {
+function AloneOnEarth(props) {
   const [videoId, setVideoId] = useState()
   const [audioUrl, setAudioUrl] = useState()
 
-  const phrase = "underwater";
+  const phrase = "alone on earth";
 
   const overlayText = `
-  I swim underneath where the brightness comes  from,
+  I swim underneath where the brightness comes from,
   now I am in half, now I wear the world like a wound on my mouth. for so long I wanted to hold things like the sky, to have brightness and flying in my breath
   but that is not me, I was stolen
   or I am close to dying or
@@ -33,6 +34,12 @@ function YoutubeRobot(props) {
   is a dark river and no one else will
   ever be here.
   `;
+
+  const poem = [
+    {'line': 0, 'text': 'I swim underneath where the brightness comes from', 'interval': 4000},
+    {'line': 1, 'text': 'now I am in half, now I wear the world like a wound on my mouth', 'interval': 4000},
+    {'line': 2, 'text': 'for so long I wanted to hold things like the sky', 'interval': 4000, 'last': true}
+  ]
   
   useEffect(() => {
     navigator.geolocation.getCurrentPosition((position) => {
@@ -42,7 +49,7 @@ function YoutubeRobot(props) {
         params: {
           part: 'snippet',
           maxResults: 10,
-          locationRadius: '10mi',
+          locationRadius: '20mi',
           type: 'video',
           q: phrase,
           location: location,
@@ -70,16 +77,15 @@ function YoutubeRobot(props) {
   return (
     <div>
       {(videoId && audioUrl) && (
-        <div className="full-screen">
-            <FullScreenYoutube videoId={videoId}/>
-            <BackgroundAudio src={audioUrl}/>
-            <FullScreenText content={overlayText}/>
-
-            <NavButton class="nav tl" to="/"/>
-        </div>
+        <FullScreenVid>
+          <VidFromYoutube videoId={videoId}/>
+          {/*<BackgroundAudio src={audioUrl}/>*/}
+          <Poem content={poem} speechToText={true}/>
+          <NavButton class="nav tl" to="/"/>
+        </FullScreenVid>
       )}
     </div>
   )
 }
 
-export default YoutubeRobot;
+export default AloneOnEarth;
