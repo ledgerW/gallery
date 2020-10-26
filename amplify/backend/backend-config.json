@@ -12,5 +12,12 @@
       "service": "S3",
       "providerPlugin": "awscloudformation"
     }
+  },
+  "predictions": {
+    "narrator": {
+      "providerPlugin": "awscloudformation",
+      "service": "Polly",
+      "convertType": "speechGenerator"
+    }
   }
 }
