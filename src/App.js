@@ -3,12 +3,17 @@ import './App.css'
 import Home from './views/home'
 import AloneOnEarth from './views/aloneOnEarth'
 import { Route, withRouter } from 'react-router-dom'
+import Navbar from 'react-bootstrap/Navbar';
 
 import Amplify, { Storage } from 'aws-amplify'
 import { AmazonAIPredictionsProvider } from '@aws-amplify/predictions'
 import awsmobile from './aws-exports'
 Amplify.configure(awsmobile)
 Amplify.addPluggable(new AmazonAIPredictionsProvider())
+
+
+// Content Settings
+const backgroundVid = 'vid.mp4'
 
 
 function App() {
@@ -21,12 +26,17 @@ function App() {
       setHomeVidUrl(url);
     }
 
-    getS3Url("vid.mp4")
+    getS3Url(backgroundVid)
   }, []);
   
 
   return (
     <div className="app">
+      {/*
+      <Navbar fixed="top" bg="primary" variant="dark">
+        <Navbar.Brand href="/">Zara Kahan</Navbar.Brand>
+      </Navbar>
+      */}
       <Route exact path='/' render={() => (
         <Home url={homeVidUrl}/>
       )}/>

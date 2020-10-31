@@ -1,11 +1,11 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import '../App.css'
 
 import FullScreenText from '../components/fullScreenText'
 
 
 function Poem (props) {
-  const { content, speechToText} = props
+  const { content, speechToText } = props
   const [currentLine, setCurrentLine] = useState(0)
 
   
