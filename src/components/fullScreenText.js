@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react'
 import '../App.css'
 import { Predictions } from 'aws-amplify'
 
@@ -6,7 +6,6 @@ import { Predictions } from 'aws-amplify'
 function FullScreenText(props) {
   const { content, speechToText, callback} = props
   const { line, text, interval, last } = content
-  console.log('from FullScreenText: ' + line)
 
   useEffect(() => {
     const speakLine = async (text) => {
@@ -20,6 +19,8 @@ function FullScreenText(props) {
       }).then((res) => {
         var audio = new Audio(res.speech.url)
         audio.play()
+        //var voice = new Pizzicato.Sound(res.speech.url)
+        //voice.play()
 
         if (!last) {
           setTimeout(() => {

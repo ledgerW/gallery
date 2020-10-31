@@ -21,7 +21,6 @@ function VidFromYouTube(props) {
       opts={opts}
       onReady={(event) => event.target.mute()}
       allowfullscreen/>
-    
   )
 }
 
