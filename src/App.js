@@ -32,9 +32,11 @@ function App() {
 
   return (
     <div className="app">
+      {/*
       <Navbar fixed="top" bg="primary" variant="dark">
         <Navbar.Brand href="/">Zara Kahan</Navbar.Brand>
       </Navbar>
+      */}
       <Route exact path='/' render={() => (
         <Home url={homeVidUrl}/>
       )}/>

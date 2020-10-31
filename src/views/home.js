@@ -2,7 +2,6 @@ import React from 'react'
 import '../App.css'
 import FullScreenVid from '../components/fullScreenVid'
 import NavButton from '../components/navButton'
-import Navbar from 'react-bootstrap/Navbar';
 
 
 function Home(props) {

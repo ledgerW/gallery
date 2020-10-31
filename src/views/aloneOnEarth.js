@@ -10,10 +10,11 @@ import FullScreenVid from '../components/fullScreenVid'
 
 
 // Artistic Content Parameters
-const phrase = 'swimming alone'
+const phrase = 'people on the water'
 const maxResults = 10
 const locationRadius = '20mi'
-const audioFile = 'AloneOnEarth.wav' 
+const audioFile = 'AloneOnEarth.wav'
+const delay = 7000
 
 const poem = [
   {'line': 0, 'text': 'I swim underneath,', 'interval': 1700},
@@ -63,6 +64,7 @@ const poem = [
 function AloneOnEarth() {
   const [videoId, setVideoId] = useState()
   const [audioUrl, setAudioUrl] = useState()
+  const [ready, setReady] = useState()
   
   useEffect(() => {
     navigator.geolocation.getCurrentPosition((position) => {
@@ -81,8 +83,7 @@ function AloneOnEarth() {
       }).then((res) => {
         const newVidIds = res.data.items
         const selectedVid = newVidIds[Math.floor(Math.random()*newVidIds.length)];
-  
-        setVideoId(selectedVid.id.videoId);
+        setVideoId(selectedVid.id.videoId)
       })
     });
   }, []);
@@ -91,11 +92,17 @@ function AloneOnEarth() {
   useEffect(() => {
     const getS3Url = async (key) => {
       const url = await Storage.get(key);
-
       setAudioUrl(url);
     }
 
     getS3Url(audioFile)
+  }, []);
+
+
+  useEffect(() => {
+    setTimeout(() => {
+      setReady(true)
+    }, delay)
   }, []);
 
 
@@ -107,7 +114,9 @@ function AloneOnEarth() {
           <VidFromYoutube videoId={videoId}/>
           <BackgroundAudio src={audioUrl}/>
           <NavButton class="nav tl" to="/"/>
-          <Poem content={poem} speechToText={true}/>
+          {ready && (
+            <Poem content={poem} speechToText={true}/>
+          )}
         </FullScreenVid>
       </div>
       )}
