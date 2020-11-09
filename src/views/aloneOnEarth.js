@@ -10,7 +10,7 @@ import FullScreenVid from '../components/fullScreenVid'
 
 
 // Artistic Content Parameters
-const phrase = 'people on the water'
+const phrase = 'dark water'
 const maxResults = 10
 const locationRadius = '20mi'
 const audioFile = 'AloneOnEarth.wav'
