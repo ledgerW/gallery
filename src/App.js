@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react'
 import './App.css'
+import { Route, withRouter } from 'react-router-dom'
 import Home from './views/home'
 import AloneOnEarth from './views/aloneOnEarth'
-import { Route, withRouter } from 'react-router-dom'
-import Navbar from 'react-bootstrap/Navbar';
+import Batik from './views/batik'
 
 import Amplify, { Storage } from 'aws-amplify'
 import { AmazonAIPredictionsProvider } from '@aws-amplify/predictions'
@@ -42,6 +42,9 @@ function App() {
       )}/>
       <Route exact path='/alone-on-earth' render={() => (
         <AloneOnEarth/>
+      )}/>
+      <Route exact path='/batik' render={() => (
+        <Batik/>
       )}/>
     </div>
   );

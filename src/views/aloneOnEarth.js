@@ -113,7 +113,6 @@ function AloneOnEarth() {
         <FullScreenVid>
           <VidFromYoutube videoId={videoId}/>
           <BackgroundAudio src={audioUrl}/>
-          <NavButton class="nav tl" to="/"/>
           {ready && (
             <Poem content={poem} speechToText={true}/>
           )}
