@@ -3,8 +3,10 @@ import '../App.css'
 
 
 function FullScreenVid(props) {
+  const className = props.project || "full-screen"
+
   return (
-    <div className="full-screen">
+    <div className={className}>
       {props.children}
     </div>
   )
