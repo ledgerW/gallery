@@ -7,7 +7,7 @@ function NavButton(props) {
   return (
     <div className={props.class}>
       <Link to={props.to}>
-        <button><i class="fas fa-snowman"></i></button>
+        <button></button>
       </Link>
     </div>
   )
