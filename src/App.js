@@ -4,6 +4,7 @@ import { Route, withRouter } from 'react-router-dom'
 import Home from './views/home'
 import AloneOnEarth from './views/aloneOnEarth'
 import Batik from './views/batik'
+import Bird from './views/bird'
 
 import Amplify, { Storage } from 'aws-amplify'
 import { AmazonAIPredictionsProvider } from '@aws-amplify/predictions'
@@ -13,7 +14,7 @@ Amplify.addPluggable(new AmazonAIPredictionsProvider())
 
 
 // Content Settings
-const backgroundVid = 'vid.mp4'
+const backgroundVid = 'home.mp4'
 
 
 function App() {
@@ -45,6 +46,9 @@ function App() {
       )}/>
       <Route exact path='/batik' render={() => (
         <Batik/>
+      )}/>
+      <Route exact path='/bird' render={() => (
+        <Bird/>
       )}/>
     </div>
   );
