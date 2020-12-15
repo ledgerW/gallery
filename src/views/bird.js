@@ -22,7 +22,7 @@ function Bird() {
   }, []);
 
   return (
-    <FullScreenVid project='bird'>
+    <FullScreenVid project='full-screen-batik'>
       {/* video tag must be first (TODO: address this) */}
       <video autoPlay loop src={vidUrl}></video>
     </FullScreenVid>
