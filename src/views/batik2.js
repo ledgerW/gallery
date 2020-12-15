@@ -5,10 +5,10 @@ import { Storage } from 'aws-amplify'
 
 
 // Content Settings
-const vidContent = 'BatikHidupAkhir.mp4'
+const vidContent = 'BatikPart2.mp4'
 
 
-function Batik() {
+function Batik2() {
   const [vidUrl, setVidUrl] = useState("")
   
   useEffect(() => {
@@ -29,4 +29,4 @@ function Batik() {
   )
 }
 
-export default Batik;
+export default Batik2;

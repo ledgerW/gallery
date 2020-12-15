@@ -3,7 +3,8 @@ import './App.css'
 import { Route, withRouter } from 'react-router-dom'
 import Home from './views/home'
 import AloneOnEarth from './views/aloneOnEarth'
-import Batik from './views/batik'
+import Batik1 from './views/batik1'
+import Batik2 from './views/batik2'
 import Bird from './views/bird'
 
 import Amplify, { Storage } from 'aws-amplify'
@@ -44,10 +45,13 @@ function App() {
       <Route exact path='/alone-on-earth' render={() => (
         <AloneOnEarth/>
       )}/>
-      <Route exact path='/batik' render={() => (
-        <Batik/>
+      <Route exact path='/half-faced-mother-still-tongued-child' render={() => (
+        <Batik1/>
       )}/>
-      <Route exact path='/bird' render={() => (
+      <Route exact path='/batik2' render={() => (
+        <Batik2/>
+      )}/>
+      <Route exact path='/the-one-who-moves' render={() => (
         <Bird/>
       )}/>
     </div>
