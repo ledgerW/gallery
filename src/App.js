@@ -48,7 +48,7 @@ function App() {
       <Route exact path='/half-faced-mother-still-tongued-child' render={() => (
         <Batik1/>
       )}/>
-      <Route exact path='/batik2' render={() => (
+      <Route exact path='/ask-the-sky' render={() => (
         <Batik2/>
       )}/>
       <Route exact path='/the-one-who-moves' render={() => (

@@ -10,7 +10,7 @@ function BackgroundAudio(props) {
       autoPlay={true}
       controls={false}
       loop={true}
-      volume={0.3}
+      volume={0.6}
     />
   )
 }

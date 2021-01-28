@@ -10,11 +10,11 @@ import FullScreenVid from '../components/fullScreenVid'
 
 
 // Artistic Content Parameters
-const phrase = 'dark water'
+const phrase = 'alone on earth dark river'
 const maxResults = 10
 const locationRadius = '20mi'
 const audioFile = 'AloneOnEarth.wav'
-const delay = 7000
+const delay = 4000
 
 const poem = [
   {'line': 0, 'text': 'I swim underneath,', 'interval': 1700},

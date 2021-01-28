@@ -18,6 +18,7 @@ function FullScreenText(props) {
         }
       }).then((res) => {
         var audio = new Audio(res.speech.url)
+        audio.volume = 0.8
         audio.play()
         //var voice = new Pizzicato.Sound(res.speech.url)
         //voice.play()
