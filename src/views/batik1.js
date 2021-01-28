@@ -5,10 +5,10 @@ import { Storage } from 'aws-amplify'
 
 
 // Content Settings
-const vidContent = 'bird.mp4'
+const vidContent = 'BatikHidupAkhir.mp4'
 
 
-function Bird() {
+function Batik1() {
   const [vidUrl, setVidUrl] = useState("")
   
   useEffect(() => {
@@ -24,9 +24,9 @@ function Bird() {
   return (
     <FullScreenVid project='full-screen-batik'>
       {/* video tag must be first (TODO: address this) */}
-      <video autoPlay loop src={vidUrl}></video>
+      <video autoPlay muted loop src={vidUrl}></video>
     </FullScreenVid>
   )
 }
 
-export default Bird;
+export default Batik1;
