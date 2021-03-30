@@ -5,6 +5,7 @@ import Home from './views/home'
 import AloneOnEarth from './views/aloneOnEarth'
 import Batik1 from './views/batik1'
 import Batik2 from './views/batik2'
+import Batik3 from './views/batik3'
 import Bird from './views/bird'
 
 import Amplify, { Storage } from 'aws-amplify'
@@ -50,6 +51,9 @@ function App() {
       )}/>
       <Route exact path='/ask-the-sky' render={() => (
         <Batik2/>
+      )}/>
+      <Route exact path='/not-afraid' render={() => (
+        <Batik3/>
       )}/>
       <Route exact path='/the-one-who-moves' render={() => (
         <Bird/>
