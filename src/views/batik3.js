@@ -24,7 +24,7 @@ function Batik3() {
   return (
     <FullScreenVid project='full-screen-batik'>
       {/* video tag must be first (TODO: address this) */}
-      <video autoPlay loop src={vidUrl}></video>
+      <video autoplay loop src={vidUrl}></video>
     </FullScreenVid>
   )
 }
