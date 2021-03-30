@@ -11,7 +11,7 @@ import Bird from './views/bird'
 import Amplify, { Storage } from 'aws-amplify'
 import { AmazonAIPredictionsProvider } from '@aws-amplify/predictions'
 import awsmobile from './aws-exports'
-import config from '../config'
+import config from './config'
 //Amplify.configure(awsmobile)
 Amplify.configure(config)
 Amplify.addPluggable(new AmazonAIPredictionsProvider())

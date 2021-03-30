@@ -8,6 +8,18 @@ const dev = {
           bucket: 'gallery-content11249-dev', 
           region: 'us-east-1'
       }
+  },
+  predictions: {
+    convert: {
+        speechGenerator: {
+            region: "us-east-1",
+            proxy: false,
+            defaults: {
+                VoiceId: "Kendra",
+                LanguageCode: "en-US"
+            }
+        }
+    }
   }
 };
 
@@ -21,6 +33,18 @@ const prod = {
           bucket: 'gallery-content212037-prod', 
           region: 'us-east-1'
       }
+  },
+  predictions: {
+    convert: {
+        speechGenerator: {
+            region: "us-east-1",
+            proxy: false,
+            defaults: {
+                VoiceId: "Kendra",
+                LanguageCode: "en-US"
+            }
+        }
+    }
   }
 };
 
