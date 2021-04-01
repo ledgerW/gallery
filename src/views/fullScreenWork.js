@@ -1,15 +1,26 @@
 import React, { useState, useEffect } from 'react'
+import { useParams } from "react-router-dom";
 import '../App.css'
 import FullScreenVid from '../components/fullScreenVid'
 import { Storage } from 'aws-amplify'
 
 
 // Content Settings
-const vidContent = 'BatikPart3.mp4'
+//const vidFileName = 'BatikHidupAkhir.mp4'
+
+const isTitleMuted = {
+  halffacedmotherstilltonguedchild: 'True',
+  askthesky: 'True',
+  notafraid: 'False',
+  theonewhomoves: 'False'
+}
 
 
-function Batik3() {
+function FullScreenWork() {
   const [vidUrl, setVidUrl] = useState("")
+  const { workTitle } = useParams();
+  let muted;
+  let muteTitle;
   
   useEffect(() => {
     const getS3Url = async (key) => {
@@ -18,8 +29,11 @@ function Batik3() {
       setVidUrl(url);
     }
 
-    getS3Url(vidContent)
-  }, []);
+    muteTitle = workTitle.replace('-','')
+    console.log(muteTitle);
+    muted = isTitleMuted.muteTitle
+    getS3Url(workTitle.concat('.mp4'))
+  }, [workTitle]);
 
   return (
     <FullScreenVid project='full-screen-batik'>
@@ -29,4 +43,4 @@ function Batik3() {
   )
 }
 
-export default Batik3;
+export default FullScreenWork;

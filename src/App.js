@@ -3,6 +3,7 @@ import './App.css'
 import { Route, withRouter } from 'react-router-dom'
 import Home from './views/home'
 import AloneOnEarth from './views/aloneOnEarth'
+import FullScreenWork from './views/fullScreenWork'
 import Batik1 from './views/batik1'
 import Batik2 from './views/batik2'
 import Batik3 from './views/batik3'
@@ -10,9 +11,7 @@ import Bird from './views/bird'
 
 import Amplify, { Storage } from 'aws-amplify'
 import { AmazonAIPredictionsProvider } from '@aws-amplify/predictions'
-import awsmobile from './aws-exports'
 import config from './config'
-//Amplify.configure(awsmobile)
 Amplify.configure(config)
 Amplify.addPluggable(new AmazonAIPredictionsProvider())
 
@@ -48,17 +47,8 @@ function App() {
       <Route exact path='/alone-on-earth' render={() => (
         <AloneOnEarth/>
       )}/>
-      <Route exact path='/half-faced-mother-still-tongued-child' render={() => (
-        <Batik1/>
-      )}/>
-      <Route exact path='/ask-the-sky' render={() => (
-        <Batik2/>
-      )}/>
-      <Route exact path='/not-afraid' render={() => (
-        <Batik3/>
-      )}/>
-      <Route exact path='/the-one-who-moves' render={() => (
-        <Bird/>
+      <Route exact path='/:workTitle' render={() => (
+        <FullScreenWork/>
       )}/>
     </div>
   );

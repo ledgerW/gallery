@@ -4,7 +4,6 @@ import { Storage } from 'aws-amplify'
 import VidFromYoutube from '../components/vidFromYoutube'
 import Poem from '../components/poem'
 import BackgroundAudio from '../components/backgroundAudio'
-import NavButton from '../components/navButton'
 import Youtube from '../apis/youtube'
 import FullScreenVid from '../components/fullScreenVid'
 
