@@ -5,12 +5,16 @@ import FullScreenText from '../components/fullScreenText'
 
 
 function Poem (props) {
-  const { content, speechToText } = props
+  const { content, speechToText, voice } = props
   const [currentLine, setCurrentLine] = useState(0)
 
   
   return (
-    <FullScreenText content={content[currentLine]} speechToText={speechToText} callback={setCurrentLine}/>
+    <FullScreenText
+      content={content[currentLine]}
+      speechToText={speechToText}
+      voice={voice}
+      callback={setCurrentLine}/>
   )
 }
 

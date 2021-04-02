@@ -4,7 +4,7 @@ import { Predictions } from 'aws-amplify'
 
 
 function FullScreenText(props) {
-  const { content, speechToText, callback} = props
+  const { content, speechToText, voice, callback } = props
   const { line, text, interval, last } = content
 
   useEffect(() => {
@@ -14,7 +14,7 @@ function FullScreenText(props) {
           source: {
             text: text
           },
-          voiceId: "Raveena"
+          voiceId: voice
         }
       }).then((res) => {
         var audio = new Audio(res.speech.url)

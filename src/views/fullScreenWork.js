@@ -29,7 +29,7 @@ function FullScreenWork() {
       setVidUrl(url);
     }
 
-    muteTitle = workTitle.replace('-','')
+    muteTitle = workTitle.replaceAll('-','')
     console.log(muteTitle);
     muted = isTitleMuted.muteTitle
     getS3Url(workTitle.concat('.mp4'))

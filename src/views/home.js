@@ -9,10 +9,12 @@ function Home(props) {
     <FullScreenVid>
       {/* video tag must be first (TODO: address this) */}
       <video autoPlay muted loop src={props.url}></video>
-      <NavButton class="nav batik1" to="half-faced-mother-still-tongued-child"/>
-      <NavButton class="nav batik2" to="ask-the-sky"/>
-      <NavButton class="nav bird" to="the-one-who-moves"/>
-      <NavButton class="nav aoe" to="alone-on-earth"/>
+      <NavButton class="nav batik1" to="full-screen/half-faced-mother-still-tongued-child"/>
+      <NavButton class="nav batik2" to="full-screen/ask-the-sky"/>
+      <NavButton class="nav bird" to="full-screen/the-one-who-moves"/>
+      <NavButton class="nav aoe" to="vid-poem/alone-on-earth"/>
+      <NavButton class="nav question" to="vid-poem/question-why-am-i-here"/>
+      <NavButton class="nav not-afraid" to="full-screen/not-afraid"/>
     </FullScreenVid>
   )
 }
