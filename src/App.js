@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import './App.css'
 import { Route, withRouter } from 'react-router-dom'
 import Home from './views/home'
-import AloneOnEarth from './views/aloneOnEarth'
+import VideoPoem from './views/videoPoem'
 import FullScreenWork from './views/fullScreenWork'
 
 import Amplify, { Storage } from 'aws-amplify'
@@ -40,10 +40,10 @@ function App() {
       <Route exact path='/' render={() => (
         <Home url={homeVidUrl}/>
       )}/>
-      <Route exact path='/alone-on-earth' render={() => (
-        <AloneOnEarth/>
+      <Route exact path='/vid-poem/:workTitle' render={() => (
+        <VideoPoem/>
       )}/>
-      <Route exact path='/:workTitle' render={() => (
+      <Route exact path='/full-screen/:workTitle' render={() => (
         <FullScreenWork/>
       )}/>
     </div>
