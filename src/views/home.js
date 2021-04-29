@@ -14,7 +14,7 @@ function Home(props) {
       <NavButton class="nav bird" to="full-screen/the-one-who-moves"/>
       <NavButton class="nav aoe" to="vid-poem/alone-on-earth"/>
       <NavButton class="nav question" to="vid-poem/question-why-am-i-here"/>
-      <NavButton class="nav not-afraid" to="full-screen/not-afraid"/>
+      <NavButton class="nav on-earth" to="full-screen/on-earth-you-are-briefly-gorgeous"/>
     </FullScreenVid>
   )
 }
