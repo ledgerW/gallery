@@ -243,3 +243,22 @@
   outline: 0;
   border: none;
 }
+
+.water-and-light-main {
+  right: 250px;
+  top: 595px;
+}
+
+.nav.water-and-light-main button {
+  display: block;
+  width: 250px;
+  height: 100px;
+  background: rgba(252, 253, 253, 0);
+  background-image: url('./assets/alone_on_earth.png');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 160px;
+  font-size: 0;
+  outline: 0;
+  border: none;
+}
